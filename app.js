@@ -12,11 +12,12 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 
+// Retrieve and return all blogs
 app.get('/blogs', (req, res) => {
-    // Retrieve and return all blogs
     res.json(blogData.blogs);
 });
 
+// Retrieve and return all lastweek blogs
 app.get('/blogs/lastweek', (req, res) => {  
     console.log('avav')
     const lastWeekBlogs = blogData.blogs.filter(blog => {
@@ -29,6 +30,7 @@ app.get('/blogs/lastweek', (req, res) => {
     res.json(lastWeekBlogs);
 });
 
+// Retrieve and return by Id or title of the blog
 app.get('/blogs/:idOrTitle', (req, res) => {
     const { idOrTitle } = req.params;
     const blog = blogData.blogs.find(blog => blog.id.toString() === idOrTitle || blog.title.toLowerCase() === idOrTitle.toLowerCase());
