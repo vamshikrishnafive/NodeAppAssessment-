@@ -2,27 +2,39 @@
     "blogs": [
       {
         "id": 1,
-        "title": "Sample Blog 1",
-        "content": "Lorem ipsum...",
-        "publishedAt": "2023-10-10"
+        "title": "PLAS-5K",
+        "content":"Accurate prediction of binding affinities between a small molecule and target proteins still remains to be a major challenge. The use of Artificial Intelligence (AI) models have been proposed as an alternative to traditional physics based scoring functions. Despite many advances in machine learning (ML) models over affinity prediction, they have mainly relied on feature engineering from static 3-Dimensional that often mask the dynamic features of protein-ligand interactions. To this end, we have curated MD-based datasets that provides protein-ligand affinities along with non-covalent interaction components for machine learning applications. Models built over these datasets can help to capture the dynamic binding modes by considering various geometric charactresitcs of the interaction. PLAS-5k comprises of 5000 protein-ligand complexes chosen from PDB database. The dataset consists of binding affinities along with energy components like electrostatic, van der Waals, polar and non-polar solvation energy calculated from molecular dynamics simulations using MMPBSA (Molecular Mechanics Poisson-Boltzmann Surface Area) method. The initial structures of all the 5000 protein ligand complexes are available in PDB format and the csv file containing information about binding affinity. This work is published in Scientific Data (https://doi.org/10.1038/s41597-022-01631-9)",
+        "publishedAt": "2023-10-11"
       },
       {
         "id": 2,
-        "title": "Sample Blog 2",
-        "content": "Dolor sit amet...",
-        "publishedAt": "2023-10-09"
+        "title": "PLAS-5K Variation 2",
+        "content": "Accurate prediction of binding affinities between a small molecule and target proteins still remains to be a major challenge. The use of Artificial Intelligence (AI) models have been proposed as an alternative to traditional physics based scoring functions. Despite many advances in machine learning (ML) models over affinity prediction, they have mainly relied on feature engineering from static 3-Dimensional that often mask the dynamic features of protein-ligand interactions. To this end, we have curated MD-based datasets that provides protein-ligand affinities along with non-covalent interaction components for machine learning applications. Models built over these datasets can help to capture the dynamic binding modes by considering various geometric charactresitcs of the interaction. PLAS-5k comprises of 5000 protein-ligand complexes chosen from PDB database. The dataset consists of binding affinities along with energy components like electrostatic, van der Waals, polar and non-polar solvation energy calculated from molecular dynamics simulations using MMPBSA (Molecular Mechanics Poisson-Boltzmann Surface Area) method. The initial structures of all the 5000 protein ligand complexes are available in PDB format and the csv file containing information about binding affinity. This work is published in Scientific Data (https://doi.org/10.1038/s41597-022-01631-9)",
+        "publishedAt": "2023-10-29"
       },
       {
         "id": 3,
-        "title": "Sample Blog 3",
-        "content": "sit amet...",
-        "publishedAt": "2023-11-09"
+        "title": "APO-Bind",
+        "content": "A dataset ligand unbound protein conformations for Machine Learning Applications in De Novo Drug Design. Ligand-free protein structure equivalents for 10,599 out of 16,608 protein-ligand complexes were obtained in the PDBbind v.2019 database with the purpose of enabling computation and large-scale validation of structure-based drug design methods on apo structures. This was done by mining the PDB database for apo protein structures with high sequence and structural alignment with proteins present in PDBbind",
+        "publishedAt": "2023-11-03"
       },
       {
         "id": 4,
-        "title": "Sample Blog 4",
-        "content": "sit...",
+        "title": "PLAS-5K Variation 3",
+        "content": "Accurate prediction of binding affinities between a small molecule and target proteins still remains to be a major challenge. The use of Artificial Intelligence (AI) models have been proposed as an alternative to traditional physics based scoring functions. Despite many advances in machine learning (ML) models over affinity prediction, they have mainly relied on feature engineering from static 3-Dimensional that often mask the dynamic features of protein-ligand interactions. To this end, we have curated MD-based datasets that provides protein-ligand affinities along with non-covalent interaction components for machine learning applications. Models built over these datasets can help to capture the dynamic binding modes by considering various geometric charactresitcs of the interaction. PLAS-5k comprises of 5000 protein-ligand complexes chosen from PDB database. The dataset consists of binding affinities along with energy components like electrostatic, van der Waals, polar and non-polar solvation energy calculated from molecular dynamics simulations using MMPBSA (Molecular Mechanics Poisson-Boltzmann Surface Area) method. The initial structures of all the 5000 protein ligand complexes are available in PDB format and the csv file containing information about binding affinity. This work is published in Scientific Data (https://doi.org/10.1038/s41597-022-01631-9)",
+        "publishedAt": "2023-11-06"
+      },
+      {
+        "id": 5,
+        "title": "INAI Challenge Dataset",
+        "content": "Drivers of ADAS-fitted buses receive real-time safety alerts. AI-powered Advanced Driver Assistance Systems (ADAS) continuously monitors the road ahead and warns the driver a few seconds before a potential collision. ADAS Safety alerts and warnings to driver are given below: 1. Forward Collision Warning (FCW) 2. Pedestrian Collision Warning (PCW) 3. Headway Monitoring and Warning (HMW) 4. Lane Departure Warning (LDW) ADAS alerts provide real-time warnings and quick feedback to drivers. Such real-time warnings improve driver reaction time by up to 2X. Thus, irrespective of driving experience of the driver, driver alertness to road events improves and likelihood of dangerous road incidents reduces. Also, following driver monitoring alerts are included: 1. No seat belt 2. Smoking 3. On phone 4. Hard brake 5. Drowsy 6. Asleep 7. Distracted",
         "publishedAt": "2023-11-09"
+      },
+      {
+        "id": 6,
+        "title": "IDD Temporal Test",
+        "content": "The IDD temporal dataset consists of the temporally nearby frames (+- 15 frames) from the IDD Segmentation and Detection Datasets. The 30 nearby frames for many of the frames in the IDD Segmentation dataset, is provided in the correspondingly named subfolders in the IDD temporal dataset.",
+        "publishedAt": "2023-11-11"
       }
     ]
   }
