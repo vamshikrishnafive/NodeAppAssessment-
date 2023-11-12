@@ -9,17 +9,21 @@ app.use(express.json());
 
 // Sample route
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+    res.send('Hello Welcome to Ghost Blogs!');
 });
 
 // Retrieve and return all blogs
 app.get('/blogs', (req, res) => {
-    res.json(blogData.blogs);
+    const allBlogs = blogData.blogs;
+    if (allBlogs) {
+        res.json(allBlogs);
+    } else {
+        res.status(404).json({ message: 'Blog not posted recently' });
+    }
 });
 
 // Retrieve and return all lastweek blogs
-app.get('/blogs/lastweek', (req, res) => {  
-    console.log('avav')
+app.get('/blogs/lastweek', (req, res) => {
     const lastWeekBlogs = blogData.blogs.filter(blog => {
         const publishedAt = new Date(blog.publishedAt);
         const oneWeekAgo = new Date();
@@ -27,7 +31,11 @@ app.get('/blogs/lastweek', (req, res) => {
         return publishedAt >= oneWeekAgo;
     });
 
-    res.json(lastWeekBlogs);
+    if (lastWeekBlogs) {
+        res.json(lastWeekBlogs);
+    } else {
+        res.status(404).json({ message: 'Blog not posted recently' });
+    }
 });
 
 // Retrieve and return by Id or title of the blog
@@ -40,6 +48,36 @@ app.get('/blogs/:idOrTitle', (req, res) => {
     } else {
         res.status(404).json({ message: 'Blog not found' });
     }
+});
+
+// Retrieve and return by Id or title of the blog
+app.post('/blogs/create', (req, res) => {
+
+    const { title, content } = req.body;
+    const currentDate = new Date();
+
+    const blogs = blogData.blogs;
+    const lastPostedBlog = blogs.pop();
+
+    // Get the publishedAt format
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const day = String(currentDate.getDate()).padStart(2, '0');
+
+    let newBlog = {};
+    newBlog.id = lastPostedBlog.id + 1;
+    newBlog.title = title;
+    newBlog.content = content;
+    newBlog.publishedAt = `${year}-${month}-${day}`;
+
+    console.log('new blog', newBlog)
+    blogs.push(newBlog);
+
+    // if (blogs) {
+    //     res.json(blog);
+    // } else {
+    //     res.status(404).json({ message: 'Blog not found' });
+    // }
 });
 
 
