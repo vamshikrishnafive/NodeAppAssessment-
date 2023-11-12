@@ -1,11 +1,25 @@
 const express = require('express');
-const blogData = require('./data.json');
+const path = require('path');
+const fs = require('fs');
 const app = express();
 const port = 3000; // Change this to your desired port number
 
 // Middleware to parse JSON requests
 app.use(express.json());
 
+// Function to load blogData from data.json
+function loadData() {
+    const filePath = path.join(__dirname, 'data.json');
+    try {
+        const data = fs.readFileSync(filePath, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Error loading data:', error);
+        return { blogs: [] }; // Return an empty array if the file doesn't exist or there's an error
+    }
+}
+
+const blogData = loadData();
 
 // Sample route
 app.get('/', (req, res) => {
@@ -54,32 +68,30 @@ app.get('/blogs/:idOrTitle', (req, res) => {
 app.post('/blogs/create', (req, res) => {
 
     const { title, content } = req.body;
-    const currentDate = new Date();
 
     const blogs = blogData.blogs;
-    const lastPostedBlog = blogs.pop();
-
-    // Get the publishedAt format
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-    const day = String(currentDate.getDate()).padStart(2, '0');
 
     let newBlog = {};
-    newBlog.id = lastPostedBlog.id + 1;
+    newBlog.id = blogs.length + 1;
     newBlog.title = title;
     newBlog.content = content;
-    newBlog.publishedAt = `${year}-${month}-${day}`;
+    newBlog.publishedAt = new Date().toISOString().split('T')[0];
 
-    console.log('new blog', newBlog)
     blogs.push(newBlog);
+    saveData(blogData);
 
-    // if (blogs) {
-    //     res.json(blog);
-    // } else {
-    //     res.status(404).json({ message: 'Blog not found' });
-    // }
+    res.json({ message: 'Blog post created successfully', blog: newBlog });
 });
 
+// Function to save blogData to data.json
+function saveData(data) {
+    const filePath = path.join(__dirname, 'data.json');
+    try {
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+    } catch (error) {
+        console.error('Error saving data:', error);
+    }
+}
 
 // Start the server
 app.listen(port, () => {
