@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "ca19cff5-4b16-415f-a098-9452b36fefd9",
+		"name": "GhostBlogEngine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11378201"
+	},
+	"item": [
+		{
+			"name": "Create Blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test Post\",\r\n    \"content\": \"This is a test post content.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/blogs/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/blogs"
+			},
+			"response": []
+		},
+		{
+			"name": "Get single Blog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/blogs/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get lastweek Blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/blogs/lastweek"
+			},
+			"response": []
+		},
+		{
+			"name": "Welcome page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000"
+			},
+			"response": []
+		}
+	]
+}
