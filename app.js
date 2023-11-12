@@ -4,6 +4,8 @@ const fs = require('fs');
 const app = express();
 const port = 3000; // Change this to your desired port number
 
+module.exports = app;
+
 // Middleware to parse JSON requests
 app.use(express.json());
 
