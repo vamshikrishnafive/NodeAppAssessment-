@@ -29,7 +29,7 @@ Ghost Blog Engine is a simple blog engine built with Node.js and Express.
 
    ```bash
    npm install
-   touch data.json
+   touch data.json or rename the used.data.json to data.json
    ```
 
 example data.json file 
@@ -59,22 +59,26 @@ npm run test
 
 ## API Endpoints
 
-Get All Blogs
+**Get All Blogs**
 
 Endpoint: GET /blogs
 Description: Get all blogs.
 
-Get Last Week's Blogs
+**Get Last Week's Blogs**
 Endpoint: GET /blogs/lastweek
 Description: Get blogs published in the last week.
 
-Get Single Blog
+**Get Single Blog**
 Endpoint: GET /blogs/:idOrTitle
 Description: Get details of a single blog by id Or Title.
 
+**Create Single Blog**
+Endpoint: POST /blogs/create
+Description: Create a new blog and save to the disk
+
 ## Contributing
 
-**(Vamshi krishna)**
+**Vamshi krishna**
 
 ## License
 
