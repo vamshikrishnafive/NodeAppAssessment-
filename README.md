@@ -15,8 +15,8 @@ Ghost Blog Engine is a simple blog engine built with Node.js and Express.
 
 ## Prerequisites
 
-- Node.js (version x.x.x)
-- npm (version x.x.x)
+- Node.js (version 20.9.0)
+- npm (version 10.1.0)
 - Git
 
 ## Installation
@@ -32,7 +32,8 @@ Ghost Blog Engine is a simple blog engine built with Node.js and Express.
    touch data.json or rename the used.data.json to data.json
    ```
 
-example data.json file 
+example data.json file:
+```js
 {
     "blogs": [
         {
@@ -43,6 +44,7 @@ example data.json file
         }
     ]
 }
+```
 
 ## Running the Server
 
